@@ -16,3 +16,99 @@ body {
 	max-width: 1920px;
 	margin: 0 auto;
 }
+
+/* ----------------- HEADER ----------------- */
+
+.header {
+	display: grid;
+	/* grid-template-rows: max-content;
+	grid-template-columns: 1fr 1fr 100px;
+	grid-template-areas: "logo nav search"; */
+
+	grid-template: "logo nav search" max-content / 1fr 1fr 100px;
+	align-items: center;
+	justify-items: start;
+
+	padding: 20px 0;
+
+	text-transform: uppercase;
+
+	overflow: hidden;
+}
+
+.logo {
+	font-family: "Secular One", sans-serif;
+	font-weight: 400;
+	color: #FF4747;
+	font-size: 24px;
+	width: 150px;
+	line-height: 1;
+
+	grid-area: logo;
+	justify-self: end;
+}
+
+.header__nav {
+	grid-area: nav;
+}
+
+.header__nav ul {
+	display: flex;
+	gap: 10px;
+}
+
+.header__nav a {
+	padding: 15px;
+	transition: color 0.2s;
+
+	position: relative;
+	display: inline-block;
+}
+
+.header__nav a:hover {
+	color: #00BCB4;
+}
+
+.header__nav a:active {
+	color: #00A7A0;
+}
+
+.header__nav a::after {
+	content: "";
+	display: block;
+	width: 80%;
+	height: 100%;
+
+	background-color: #00BCB4;
+
+	position: absolute;
+	left: 15px;
+	bottom: -200%;
+
+	transition: bottom 0.5s, background-color 0.2s;
+}
+
+.header__nav a:hover::after {
+	bottom: -80%;
+}
+
+.header__nav a:active::after {
+	background-color: #00A7A0;
+}
+
+
+.search {
+	grid-area: search;
+}
+
+.search__icon {
+	transition: fill 0.2s;
+}
+
+.search__icon:hover {
+	fill: #00BCB4;
+}
+
+.search__icon:active {
+	fill: #00A7A0;
+}

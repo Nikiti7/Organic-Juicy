@@ -359,6 +359,8 @@ body {
 	position: absolute;
 	bottom: 20px;
 	right: 20px;
+
+	transition: opacity 0.2s ;
 }
 
 .orange__arrow:hover {
@@ -367,4 +369,145 @@ body {
 
 .orange__arrow:active {
 	opacity: 0.6;
+}
+
+
+/* ---------- FOOTER ---------- */
+.wrapper-down {
+	display: grid;
+	/* grid-template-columns: 4.5fr 1.5fr;
+	grid-template-rows: 1fr;
+	grid-template-areas: "footer sidebar"; */
+
+	grid-template: "footer sidebar" 1fr / 4.5fr 1.5fr;
+}
+
+.footer {
+	padding-top: 80px;
+
+	grid-area: footer;
+
+	display: grid;
+	/* grid-template-columns: 1fr 1fr 1.5fr 1fr;
+	grid-template-rows: max-content 100px;
+	grid-template-areas: ". socials form logo"
+											". . . copy"; */
+
+	grid-template: ". socials form logo" max-content
+								". . . copy" 100px / 1fr 1fr 1.5fr 1fr;
+
+	align-items: end;
+	align-content: center;
+
+	background-color: #2f2f2f;
+	color: #fff;
+}
+
+.socials {
+	grid-area: socials;
+	display: flex;
+	gap: 10px;
+}
+
+.socials__link {
+	border: 2px solid #fff;
+	border-radius: 50%;
+
+	width: 40px;
+	height: 40px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	transition: opacity 0.2s;
+}
+
+.socials__link img {
+	width: 20px;
+	height: 20px;
+}
+
+.socials__link:hover {
+	opacity: 0.8;
+}
+
+.socials__link:active {
+	opacity: 0.6;
+}
+
+.form {
+	grid-area: form;
+	text-transform: uppercase;
+}
+
+.form__title {
+	font-size: 18px;
+	margin-bottom: 20px;
+	letter-spacing: 2px;
+}
+
+.form__row {
+	display: flex;
+}
+
+.form__input {
+	height: 40px;
+	width: 200px;
+	padding: 0 20px;
+	outline: none;
+}
+
+.form__submit-btn {
+	background-color: #00C2BA;
+	color: #fff;
+	height: 40px;
+	padding: 0 20px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+
+	transition: background-color 0.2s;
+}
+
+.form__submit-btn:hover {
+	background-color: #00eae0;
+}
+
+.form__submit-btn:active {
+	background-color: #00aaa3;
+}
+
+.logo-img {
+	width: 80px;
+	fill: #6A6A6A;
+	justify-self: center;
+
+}
+
+.footer__logo {
+	grid-area: logo;
+}
+
+.copy {
+	grid-area: copy;
+	color: #6A6A6A;
+	justify-self: center;
+	align-self: center;
+	
+}
+
+/* SIDEBAR */
+.sidebar {
+	grid-area: sidebar;
+	background-color: #00C2BA;
+}
+
+.btn--rounded {
+	border-radius: 30px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+
+.sidebar p + .btn {
+	margin-top: 20px;
 }

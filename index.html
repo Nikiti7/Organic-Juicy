@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div class="container">
-		<header class="header">
+		<header class="header header--mobile">
 				<h1 class="logo">ORGANIC JUICY CO.</h1>
 			<nav class="header__nav">
 				<ul>
@@ -20,7 +20,12 @@
 					<li><a href="#!">CONTACT</a></li>
 				</ul>
 			</nav>
-			<button class="search">
+
+			<button type="button" class="menu-icon">
+				<div class="menu-icon__line"></div>
+			</button>
+
+			<button type="button" class="search">
 				<svg class="search__icon" width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
 					<path d="M19.5 17.8125L13.6838 11.9953C14.6211 10.7072 15.1253 9.15488 15.1238 7.56188C15.1238 3.39234 11.7314 0 7.56188 0C3.39234 0 0 3.39234 0 7.56188C0 11.7314 3.39234 15.1238 7.56188 15.1238C9.15488 15.1253 10.7072 14.6211 11.9953 13.6838L17.8125 19.5L19.5 17.8125ZM7.56188 12.7355C6.5385 12.7356 5.53809 12.4322 4.68714 11.8637C3.8362 11.2952 3.17296 10.4871 2.78129 9.54165C2.38961 8.5962 2.28711 7.55583 2.48674 6.55211C2.68637 5.5484 3.17916 4.62643 3.90279 3.90279C4.62643 3.17916 5.5484 2.68637 6.55211 2.48674C7.55583 2.28711 8.5962 2.38961 9.54165 2.78129C10.4871 3.17296 11.2952 3.8362 11.8637 4.68714C12.4322 5.53809 12.7356 6.5385 12.7355 7.56188C12.7339 8.9335 12.1883 10.2485 11.2184 11.2184C10.2485 12.1883 8.9335 12.7339 7.56188 12.7355Z"/>
 					</svg>
@@ -31,25 +36,29 @@
 			<div class="slider-arrows">
 				<div class="slider-arrows__items-wrapper">
 					<img src="img/slider-arrows-1.jpg" alt="" class="slider-arrows__item">
+					<img src="img/slider-arrows-2.jpg" alt="" class="slider-arrows__item">
+					<img src="img/slider-arrows-3.jpg" alt="" class="slider-arrows__item">
 				</div>
 				<div class="slider-arrows__nav">
-					<button class="slider-arrows__arrow slider-arrows__arow--left"><</button>
+					<button class="slider-arrows__arrow slider-arrows__arrow--left"><</button>
 					<button class="btn slider-arrows__btn">Start drinking</button>
-					<button class="slider-arrows__arrow slider-arrows__arow--right">></button>
+					<button class="slider-arrows__arrow slider-arrows__arrow--right">></button>
 				</div>
 			</div>
 
 			<div class="slider-dots">
 				<div class="slider-dots__items-wrapper">
 					<img src="img/slider-dots-1.jpg" alt="" class="slider-dots__item">
+					<img src="img/slider-dots-2.jpg" alt="" class="slider-dots__item">
+					<img src="img/slider-dots-3.jpg" alt="" class="slider-dots__item">
 				</div>
 				<div class="slider-dots__btn-wrapper">
 					<button class="btn slider-dots__btn">Start drinking</button>
 				</div>
 				<div class="slider-dots__nav">
-					<div class="slider-dots__nav-item"></div>
+					<!-- <div class="slider-dots__nav-item"></div>
 					<div class="slider-dots__nav-item slider-dots__nav-item--active"></div>
-					<div class="slider-dots__nav-item"></div>
+					<div class="slider-dots__nav-item"></div> -->
 				</div>
 			</div>
 
@@ -134,8 +143,7 @@
 				</div>
 			</article>
 		</div>
-
-
 	</div>
+	<script src="script.js"></script>
 </body>
 </html>

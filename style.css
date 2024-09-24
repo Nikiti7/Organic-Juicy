@@ -511,3 +511,252 @@ body {
 .sidebar p + .btn {
 	margin-top: 20px;
 }
+
+.sidebar .title {
+	width: 100px;
+}
+
+
+/* Aдаптация */
+@media (max-width: 1300px) {
+	.footer {
+		grid-template-columns: 1fr 1.5fr 1fr;
+		grid-template-rows: max-content 100px;
+		grid-template-areas: "socials form logo"
+												". . copy"; 
+		padding-left: 5%;
+	}
+}
+
+.slider-dots__item, .slider-arrows__item {
+	width: 100%;
+	height: 100%;
+}
+
+.slider-arrows, .slider-dots, .orange {
+	height: 400px;
+}
+
+@media (max-width: 1200px) {
+	.main {
+		grid-template-rows: 1fr auto;
+		grid-template-columns: 1fr 0.5fr 0.5fr 1fr;
+		grid-template-areas:"freshy freshy freshy healthy"
+												"slider-arrows slider-arrows slider-arrows healthy"
+												"thirsty thirsty thirsty thirsty"
+												"slider-dots slider-dots orange orange";
+	}
+
+	.slider-arrows, .slider-dots, .orange {
+		height: 300px;
+	}
+
+	.wrapper-down {
+		grid-template-columns: auto;
+		grid-template-rows: auto;
+		grid-template-areas: "sidebar" "footer";
+	}
+
+	.common--row-rev {
+		padding-right: 90px;
+	}
+
+	.sidebar .common__desc {
+		max-width: 200px;
+	}
+
+	.sidebar {
+		padding-left: 130px;
+	}
+
+	.header {
+		grid-template-columns: repeat(3, max-content);
+		grid-template-areas: "logo nav search";
+		justify-content: space-between;
+		padding: 20px;
+	}
+}
+
+@media (max-width: 760px) {
+	.footer {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
+		grid-template-areas: "socials" "form" "logo" "copy";
+		gap: 30px;
+
+		padding: 40px 20px;
+
+		justify-items: center;
+		text-align: center;
+	}
+}
+
+@media (max-width: 700px) {
+	.header__nav {
+		display: none;
+	}
+}
+
+@media (max-width: 600px) {
+	.main {
+		grid-template-columns: 1fr;
+		grid-template-areas: "healthy" "slider-arrows" "freshy" "slider-dots" "thirsty" "orange";
+	}
+
+	.healthy {
+		padding-bottom: 30px;
+	}
+
+	.common--col-rev {
+		flex-direction: row-reverse;
+		justify-content: center;
+	}
+
+	.common--col-rev .common__desc, .thirsty .common__desc, .sidebar .common__desc, .common__desc {
+		max-width: unset;
+	}
+
+	.common--row-rev {
+		padding-right: 30px;
+	}
+
+	.sidebar {
+		padding-left: 30px;
+	}
+}
+
+@media (max-width: 350px) {
+	.common {
+		padding: 10px;
+		gap: 15px;
+	}
+
+	.form__input {
+		width: 170px;
+	}
+
+	.header, .footer {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
+
+/* Бургер меню */
+.menu-icon {
+	width: 40px;
+	height: 30px;
+
+	position: relative;
+}
+
+.menu-icon:after, .menu-icon:before {
+	content: "";
+	position: absolute;
+	left: 0;
+}
+
+.menu-icon:after {
+	bottom: 0;
+	transition: transform 0.3s, bottom 0.3s 0.3s;
+}
+
+.menu-icon:before {
+	top: 0;
+	transition: transform 0.3s, top 0.3s 0.3s;
+}
+
+.menu-icon__line, .menu-icon:after, .menu-icon:before {
+	display: block;
+	width: 100%;
+	height: 3px;
+	background-color: #000;
+}
+
+.menu-icon--active .menu-icon__line {
+	display: none;
+}
+
+.menu-icon--active::before {
+	top: 50%;
+	transform: translateY(-50%) rotate(45deg);
+
+	transition: top 0.3s, transform 0.3s 0.3s;
+}
+
+.menu-icon--active::after {
+	bottom: 50%;
+	transform: translateY(50%) rotate(-45deg);
+	transition: bottom 0.3s, transform 0.3s 0.3s;
+} 
+
+.menu-icon {
+	display: none;
+}
+
+@media (max-width: 700px) {
+	.header {
+		grid-template-columns: repeat(2,max-content);
+		grid-template-areas: "logo menu-icon";
+	}
+
+	.search {
+		display: none;
+	}
+
+	.menu-icon {
+		display: block;
+		grid-area: menu-icon;
+	}
+
+	.header--mobile {
+		min-height: 100vh;
+
+		grid-template: "logo menu-icon" max-content
+										"nav nav" max-content
+										"search search";
+		align-content: space-between;
+		justify-items: center;
+	}
+
+	.header--mobile .search, .header--mobile .header__nav {
+		display: block;
+	}
+
+	.header__nav {
+		transform: none;
+	}
+
+	.header__nav ul {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.header__nav a::after {
+		display: none;
+	}
+
+	.header__nav a {
+		padding: 10px 20px;
+	}
+}
+
+/* .no-scroll {
+	overflow: hidden;
+} */
+
+button, a {
+	-webkit-tap-highlight-color: transparent;
+}
+
+.slider-arrows__item, .slider-dots__item {
+	animation: fade 0.5s;
+}
+
+@keyframes fade {
+	0% {
+		opacity: 0.3;
+	}
+	100% {
+		opacity: 1;
+	}
+}
